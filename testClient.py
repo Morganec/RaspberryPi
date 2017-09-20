@@ -11,7 +11,7 @@ def getBluetoothMacAddr():
         bdaddr= output.split('\n')[1].split("\t")[1].split(" ")[2]
         return bdaddr
     except Exception as e:
-        print(e)
+        print("No bluetoothAdress")
         return "00:00:00:00:00:00"
 
 
@@ -23,7 +23,7 @@ def connectAndClose():
 	sock.connect((hote, port))
 	print "Connection on {}".format(port)
 	hostname = socket.gethostname()
-	dateDuJour = datetime.now()
+	dateDuJour = time.time()
 	dateDuJourStr = str(dateDuJour)
 	bltadress = str(getBluetoothMacAddr())
 	sock.send(hostname+","+dateDuJourStr+","+bltadress)
