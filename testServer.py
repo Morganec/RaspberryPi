@@ -1,24 +1,12 @@
-# import SimpleHTTPServer
-# import SocketServer
-
-# PORT = 8080
-
-# Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
-
-# httpd = SocketServer.TCPServer(("", PORT), Handler)
-
-# print "serving at port", PORT
-# httpd.serve_forever()
-
-#!/usr/bin/env python
-# coding: utf-8
+#!/usr/bin/python
 
 import socket
 import sqlite3
+#from influxdb import InfluxDBClient
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.bind(('', 8080))
-
+#client = InfluxDBClient('localhost', 8086, 'root', 'root', 'example')
 def insert(hostname,adressIP,dateEnvoi,bltAdress):
 	conn = sqlite3.connect('bddSqlLite.db')
 	c = conn.cursor()

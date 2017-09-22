@@ -35,4 +35,4 @@ while 1:
 	if len(sys.argv) >= 2:
 		time.sleep(float(sys.argv[1]))
 	else:
-		time.sleep(10)
+		time.sleep(5)
